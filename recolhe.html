@@ -10,7 +10,7 @@
   <body>
     <img src="logo.png">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <nav class="navbar col-12 m-auto  navbar-expand-lg bg-body-tertiary" style="z-index: 999;">
   <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -19,11 +19,12 @@
   </div>
     
 </nav>
-    <h1>VEJA QUEm SOLICITA</h1>
+    <h1 class="text-center font-weight-bold ">VEJA QUEM SOLICITA</h1>
+    <p class="text-center font-weight-normal ">Escolha e Preecha o Formulario Abaixo com Identificador </p>
     
 
     
-      <table class="table table-striped">
+      <table class="table table-striped ">
         <tr>
             <th>IDENTIFICADOR</th>
             <th>NOME</th>
@@ -49,24 +50,27 @@
             }
         ?>
       </table>
-        <br><br><br>
-        <h1>Apos decidir insira o Id da Solicitação, Preencha os Dados e Confirme</h1>
+        <br><br>
+        
+        <h1 class="text-center font-weight-normal ">Escolha e Preecha o Formulario Abaixo com Identificador </h1>
+        
+        <br><br>
         
       <form action="atribui.php" method="POST"> 
         <form class="row g-3">
-          <div class="col-md-1">
+          <div class="col-md-1 m-3">
             <label for="id" class="form-label">Identificador</label>
             <input type="text" class="form-control" id="id" required maxlength="10">
           </div>
-            <div class="col-md-4">
+            <div class="col-md-4 m-3">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" class="form-control" id="nome" placeholder="Seu Nome" required maxlength="100">
           </div>
-              <div class="col-md-3">
+              <div class="col-md-3 m-3">
             <label for="telefone" class="form-label">Telefone</label>
             <input type="text" class="form-control" id="telefone"  required>
-          </div><br>
-          <div class="col-12">
+          </div><br><br>
+          <div class="col-12 m-3">
             <button type="submit" class="btn btn-success">Enviar</button>
             <button type="reset" class="btn btn-primary" >Reset</button>
             <button onclick="window.location.href = 'index.html';" class="btn btn-info">Home</button>
@@ -77,8 +81,9 @@
   
   <footer class="bg-dark text-light py-4">
     <div class="container text-center">
-        <p>&copy; 2024 Seu Nome</p>
+        <p>&copy; PROJETO INTEGRADOR UNIVESP - 2024 </p>
     </div>
   </footer>
 
 </html>
+
