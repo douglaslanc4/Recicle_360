@@ -12,53 +12,53 @@
     <img src="logo.png" href="index.html">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
           <nav class="navbar col-12 m-auto  navbar-expand-lg bg-body-tertiary" style="z-index: 999;">
-  <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-        </li>
-        </li>
-      </ul>
-    </div>
-  </div>
+            
+          </nav>
+  
     
 </nav>
  <h1 class="text-center font-weight-bold ">FAÇA AQUI SUA SOLICITAÇÃO</h1>
     <p class="text-center font-weight-normal ">Caso já Tenha Feito Clique em Home</p>
 
  
-
-    <form action="envia.php" method="POST">
-    <input type="text"  placeholder="Digite seu Nome" size="60" id="nome" name="nome" maxlength="100"  required><br><br>
-    <input type="text" placeholder="Digite o Endereço com numero "  size="60" id="endereco" name="endereco" maxlength="100">  <br><br>
-    <input type="tel"  placeholder="Digite seu Telefone" id="telefone" size="11" name="telefone" maxlength="11" required><br><br>
-    <input type="email" placeholder="Digite seu E-mail" id="email" size="30" name="email" maxlength="50" required><br><br>
-    <input type="date" id="data_solicitacao" size="8" name="data_solicitacao" required><br><br>
-    <textarea name="descricao"  placeholder="O Que Deseja descartar" id="decricao" cols="35" rows="3" required></textarea>
-    <br>
-    <button type="submit" class="btn btn-success">Enviar</button>
-    <button type="reset" class="btn btn-primary" >Reset</button>
-    <button onclick="window.location.href = 'index.html';" class="btn btn-info">Home</button>
-
-  </form><br><br><br>
-
-  <footer class="bg-dark text-light py-4">
-    <div class="container text-center">
-        <p>&copy; PROJETO INTEGRADOR UNIVESP - 2024 </p>
-    </div>
-  </footer>
-</body>
-<style>
-  form{
-   margin-left: 2%;
-     }
-     input{
+    <form action="envia.php" method="POST" form class="row g-3 m-2 ">
+      <div class="col-md-4">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome">
+      </div>
+      <div class="col-md-4">
+        <label for="endereco" class="form-label">Endereco</label>
+        <input type="text" class="form-control" id="endereco"  placeholder="Rua Numero Bairro" name="endereco">
+      </div>
+      <div class="col-md-3">
+        <label for="teledone" class="form-label">Telefone</label>
+        <input type="text" class="form-control" id="telefone"  name="telefone">
+      </div>
+      <div class="col-md-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="email" name="email">
+      </div>
+      <div class="col-md-2">
+        <label for="Data" class="form-label">Data</label>
+        <input type="date" class="form-control" id="data_solicitacao" name="data_solicitacao">
+      </div>
+      <div class="col-md-4">
+        <label for="Data" class="form-label">Descrição</label>
+        <textarea name="descricao"  class="form-control" placeholder="O Que Deseja descartar" id="descricao" name="descricao" required></textarea>
+      </div> 
+      <div class="col-12">
+      <button type="submit" class="btn btn-success ">Enviar</button>
+      <button type="reset" class="btn btn-primary " >Reset</button>
+      <button onclick="window.location.href = 'index.html';" class="btn btn-info ">Home</button>
+      </div>
+    </form>
       
-      border-radius: 2px;
-     }
-</style>
-</html>
+    <br><br><br>
+
+    <footer class="bg-dark text-light py-4">
+      <div class="container text-center">
+        <p>&copy; PROJETO INTEGRADOR UNIVESP - 2024 </p>
+      </div>
+    </footer>
+</body>
+

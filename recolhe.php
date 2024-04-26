@@ -66,7 +66,7 @@
     
       <table class="table table-striped ">
         <tr>
-            <th>IDENTIFICADOR</th>
+            <th>ID</th>
             <th>NOME</th>
             <th>ENDERECO</th>
             <th>TELEFONE</th>

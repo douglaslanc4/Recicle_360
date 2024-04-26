@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `recicle` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `recicle`;
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: localhost    Database: recicle
@@ -26,15 +24,15 @@ DROP TABLE IF EXISTS `solicitacao`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `solicitacao` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(50) NOT NULL,
-  `endereco` varchar(25) NOT NULL,
-  `telefone` varchar(14) NOT NULL,
-  `email` varchar(25) NOT NULL,
+  `nome` varchar(75) NOT NULL,
+  `endereco` varchar(100) NOT NULL,
+  `telefone` varchar(10) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `data_solicitacao` date DEFAULT NULL,
   `descricao` varchar(255) NOT NULL,
-  `status` varchar(25) DEFAULT 'Aberta',
+  `status` varchar(50) DEFAULT 'Aberta',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +41,7 @@ CREATE TABLE `solicitacao` (
 
 LOCK TABLES `solicitacao` WRITE;
 /*!40000 ALTER TABLE `solicitacao` DISABLE KEYS */;
-INSERT INTO `solicitacao` VALUES (1,'MACHADO DE ASSIS','RUA DOS CRAVOS, 75 JDM CA','2195554512','mach@email.com','2024-01-12','Plastico','Em andamento'),(2,'MANOEL BANDEIRA','AVENIDA BALEIA,1202 SERTO','6498571346','manoel_b@email.com','2024-02-08','vidro e papelao','Concluído'),(3,'GUIMARAES ROSA','ALAMEDA DO CORTIÇO,541 LA','34968745212','rosa_gui@email.com','2024-03-06','Galhos','Aberta');
+INSERT INTO `solicitacao` VALUES (1,'Graciliano Ramos','Av. Das Acacias,125 Jdm Botânico','1198887575','g_ramos@exemplo.com.br','2024-03-13','Papelao','Aberta'),(2,'Machado de Assis','Rua Das Camelias,1547 Planalto Central','1197771515','assi_macahdo@exemplo.com.br','2024-03-02','Vidros','Aberta'),(3,'Jose de Alencar','Av. Martinico Prado,25 Bairro Rio verde','1196862525','j_ale@exemplo.com','2024-03-14','Plastico, Vidros','Aberta');
 /*!40000 ALTER TABLE `solicitacao` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -56,7 +54,7 @@ UNLOCK TABLES;
 /*!50003 SET sql_mode              = '' */ ;
 DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `solicitacao_AFTER_UPDATE` AFTER UPDATE ON `solicitacao` FOR EACH ROW BEGIN
-IF NEW.status = 'Concluida' THEN
+IF NEW.status = 'Concluído' THEN
 DELETE FROM servicos_abertos
 WHERE id = NEW.id;
 END IF;
@@ -76,4 +74,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-18 18:57:39
+-- Dump completed on 2024-04-25 22:48:14

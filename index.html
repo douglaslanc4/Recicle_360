@@ -1,4 +1,38 @@
-!doctype html>
+
+<?php
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'recicle';
+
+// Conexão com o banco de dados
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Verifica a conexão
+if ($conn->connect_errno) {
+    die("Erro na conexão: " . $conn->connect_errno);
+   }
+
+
+    $nome = $_POST['nome'];
+    $endereco = $_POST['endereco'];
+    $telefone = $_POST['telefone'];
+    $email = $_POST['email'];
+    $data_solicitacao = $_POST['data_solicitacao'];
+    $descricao = $_POST['descricao'];
+
+    // Query SQL para inserir os dados no banco de dados
+    $sql = "INSERT INTO recicle.solicitacao (nome, endereco, telefone, email, data_solicitacao, descricao) VALUES ('$nome', '$endereco', '$telefone', '$email', '$data_solicitacao', '$descricao')";
+
+    // Executa a query
+    $resultado = mysqli_query($conn, $sql);
+
+
+
+$conn->close();
+?>
+
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
@@ -10,88 +44,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
-  <body class="p-3 m-1 border-0 ">
-    <img src="logo.png" href="index.html">
-       
-        
-    <ul class="nav nav-pills">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">QUERO DESCARTAR MEU RECICLAVEL</a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="solicitacao.html">SOLICITA</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="recolhe.php">SOLICITAÇÕES SITUAÇÃO</a></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">QUERO RECOLHER SEU RECICLAVEL</a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="abertas.php">VERIFICA ABERTAS</a></li>
-        <li><a class="dropdown-item" href="#">ENCERRA</a></li>
-      </ul>
-      <li class="nav-item">
-        <a class="nav-link" href="quem_somos.html">QUEM SOMOS</a>
-      </li>
-      
-    </ul>
-</nav><br>
-    <div id="carouselExampleDark" class="carousel carousel-dark slide">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="1000">
-      <img src="slide02.jpg" class="d-block mx-auto w-90" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h1 class="text-center font-weight-bold my-heading">TROUXEMOS UMA SOLUÇÃO PARA O PROBLEMA DE DESCARTE DE RECICLAVEL</h1>
-        <p class="my-paragraph text-center font-weight-normal">Um serviço Web Para Você Ajudar o Meio Ambiente.</p>
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="1000">
-      <img src="slide10.jpg" class="d-block mx-auto w-90" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h1 class="my-heading text-center font-weight-bold ">TECNOLOGIA A SERVIÇO DO MEIO AMBIENTE</h1>
-        <p class="my-paragraph text-center font-weight-normal">Tecnologia Para Salvar o Planeta.</p> 
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="1000">
-      <img src="slide03.jpg" class="d-block mx-auto w-90" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h1 class="my-heading text-center font-weight-bold $">CUIDAR DO PLANETA É DEVER DE TODOS</h1>
-        <p class="my-paragraph text-center font-weight-normal">Vamos Tornar o Mundo Melhor.</p>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+<body>
+    
+<div class="alert alert-info" role="alert">
+  Solicitação realizada com Sucesso! <a href="index.html" class="alert-link">Clique aqui</a> para retornar a pagina incial.
 </div>
-<footer class="bg-dark text-light py-4">
-  <div class="container text-center">
-      <p>&copy; PROJETO INTEGRADOR UNIVESP - 2024 </p>
-  </div>
-</footer>
-
-
-
-
-  </body>
-  <style>
-    .my-heading {
-        color: darkred;
-        font-size: 40; 
-    }
-
-    .my-paragraph {
-        color: yellow; 
-        font-size: 30px;
-    }
-</style>
+  
+</body>
 </html>

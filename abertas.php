@@ -55,13 +55,13 @@
 
     </nav>
     <h1 class="text-center font-weight-bold ">VEJA SOLICITAÇÕES EM ABERTO</h1>
-    <p class="text-center font-weight-normal ">Escolha e Preecha o Formulario Abaixo com Identificador </p>
+    <p class="text-center font-weight-normal ">Escolha e Clique em Atribuir Solicitação </p>
 
 
 
   <table class="table table-striped ">
     <tr>
-        <th>IDENTIFICADOR</th>
+        <th>ID</th>
         <th>NOME</th>
         <th>ENDERECO</th>
         <th>TELEFONE</th>
@@ -101,11 +101,11 @@
       <div class="modal-body">
         <form action="atribui.php" method="POST"> 
             <label for="solicitacao_id" class="form-label">Identificador</label>
-            <input type="text" class="form-control" id="solicitacao_id" required maxlength="10">
+            <input type="text" class="form-control" id="solicitacao_id" name="solicitacao_id" required maxlength="10">
             <label for="nome" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nome" placeholder="Seu Nome" required maxlength="100">
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu Nome" required maxlength="100">
             <label for="contato" class="form-label">Telefone</label>
-            <input type="text" class="form-control" id="contato"  required>  
+            <input type="text" class="form-control" id="contato"  name="contato">  
           <br><br>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Save changes</button>
@@ -115,7 +115,6 @@
   </div>
 </div>
     
-    <button type="reset" class="btn btn-danger" >Reset</button>
     <button onclick="window.location.href = 'index.html';" class="btn btn-info">Home</button>
     <br>
 
